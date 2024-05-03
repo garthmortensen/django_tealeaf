@@ -1,0 +1,34 @@
+ 1579  git init
+ 1580  touch .env
+ 1581  python -m venv venv
+ 1582  source venv/bin/activate
+ 1583  pip install django
+ 1584  python -m pip install --upgrade pip
+ 1585  django-admin startproject tealeafdjangoproj .
+ 1586* touch docker.xxx
+ 1587* exit
+ 1588  code .
+ 1590  pip install pipreqs
+ 1591  pipreqs .
+ 1592  cat requirements.txt
+ 1593  git status
+ 1594  git add .gitignore
+ 1595  git status
+ 1596  git add DOCKER manage.py requirements.txt tealeafdjangoproj/
+ 1597  git status
+ 1598  git commit -m "Initial setup"
+ 1599  git status
+ 1600  git add tealeafdjangoproj/settings.py
+ 1601  git commit -m "Django: Accept all hosts"
+ 1602  touch .dockerignore
+ 1603  touch docker-compose.yml
+ 1604  git status
+ 1605  git add .dockerignore docker-compose.yml
+ 1606  git commit -m "Docker: Add initial files"
+ 1607  docker build -t tealeafdjangoproj .
+ 1608  history
+ 1609  touch history.log
+ 1610  docker run -p 8000:8000 tealeafdjangoproj
+ 1611  docker-compose up --build
+ 1612  podman --version
+ 1613  podman-compose up --build  # do this instead of docker run, since it runs auto runs multiple containers
