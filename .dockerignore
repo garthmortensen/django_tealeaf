@@ -1,0 +1,31 @@
+# ignore these things
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+build/
+dist/
+.git/
+.gitignore
+.dockerignore
+Dockerfile
+README.md
+*.md
+.DS_Store
+*.sqlite3
+*.log
+node_modules/
+*.swp
+*~
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
+
+.venv/
+# Elastic Beanstalk
+Dockerrun.aws.json
