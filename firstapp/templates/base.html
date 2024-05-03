@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Tea Leaf Gallery{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <!-- Header content -->
+        <h1>This is the header</h1>
+        <a href="{% url 'home' %}">home</a>
+        <a href="{% url 'contact' %}">contact</a>
+        <a href="{% url 'portfolio' %}">portfolio</a>
+        <a href="{% url 'statement' %}">statement</a>
+    </header>
+
+    <main>
+        <!-- Content from child templates -->
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        <!-- Footer content -->
+        <p>&copy; 2024</p>
+    </footer>
+</body>
+</html>
