@@ -2,4 +2,4 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 def home(request):
-    return HttpResponse("Hello, Earth!")
+    return render(request, 'firstapp/home.html', {'message': 'Hello from Django!'})
