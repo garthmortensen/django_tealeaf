@@ -1,13 +1,9 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Tea Leaf Gallery</title>
-    <a href="{% url 'home' %}">home</a>
-    <a href="{% url 'contact' %}">contact</a>
-    <a href="{% url 'portfolio' %}">portfolio</a>
-    <a href="{% url 'statement' %}">statement</a>
-</head>
-<body>
+{% extends 'firstapp/base.html' %}
+
+{% block title %}Tea Leaf Gallery > home{% endblock %}
+
+{% block content %}
+    <h1>home</h1>
     <h1>{{ message }}</h1>
-</body>
-</html>
+
+{% endblock %}
