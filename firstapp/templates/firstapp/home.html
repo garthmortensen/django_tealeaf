@@ -1,9 +1,9 @@
 {% extends 'firstapp/base.html' %}
 
-{% block title %}Tea Leaf Gallery > home{% endblock %}
+{% block title %}Tea Leaf Gallery > {{ page_name }}{% endblock %}
 
 {% block content %}
-    <h1>home</h1>
-    <h1>{{ message }}</h1>
+    <h1>{{ page_name }}</h1>
 
+    <p>{{ message }}</p>
 {% endblock %}

@@ -2,13 +2,26 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 def home(request):
-    return render(request, 'firstapp/home.html', {'message': 'Hello, Mars!'})
+    context = {
+        'page_name': 'home',
+        'message': 'Hello, Mars!',
+    }
+    return render(request, 'firstapp/home.html', context)
 
 def contact(request):
-    return render(request, 'firstapp/contact.html')
+    context = {
+        'page_name': 'contact',
+    }
+    return render(request, 'firstapp/contact.html', context)
 
 def portfolio(request):
-    return render(request, 'firstapp/portfolio.html')
+    context = {
+        'page_name': 'portfolio',
+    }
+    return render(request, 'firstapp/portfolio.html', context)
 
 def statement(request):
-    return render(request, 'firstapp/statement.html')
+    context = {
+        'page_name': 'statement',
+    }
+    return render(request, 'firstapp/statement.html', context)
