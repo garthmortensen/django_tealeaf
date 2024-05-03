@@ -6,3 +6,9 @@ def home(request):
 
 def contact(request):
     return render(request, 'firstapp/contact.html')
+
+def portfolio(request):
+    return render(request, 'firstapp/portfolio.html')
+
+def statement(request):
+    return render(request, 'firstapp/statement.html')
