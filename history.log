@@ -32,3 +32,6 @@
  1611  docker-compose up --build
  1612  podman --version
  1613  podman-compose up --build  # do this instead of docker run, since it runs auto runs multiple containers
+ 1753  history | grep podman  # search for where i left off
+ 1753  !16133  # run the command from history
+ 1754  podman-compose up --build
