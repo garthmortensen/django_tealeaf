@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <!-- block tag defines a block named "title". Blocks = template sections that child templates can override.
     Content inside this block tag is the default content for the title of the page -->
-    <title>{% block title %}Tea Leaf Gallery{% endblock %}</title>
+    <title>{% block title %}{{ website_name }}{% endblock %}</title>
     <!-- run python manage.py collectstatic in prod to copy static files into the STATIC_ROOT directory -->
     <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
 </head>
