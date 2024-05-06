@@ -1,8 +1,15 @@
-/* styles.css */
 body {
-    margin: 0px;
-    background: #ccc;
+    background: #71714c;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
-div#news {
-    /* styles for div#news */
+
+main {
+    flex: 1 0 auto;
+}
+
+footer {
+    flex-shrink: 0;
+    text-align: center;
 }
