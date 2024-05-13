@@ -1,8 +1,26 @@
 {% extends 'firstapp/base.html' %}
 
+<!-- load static for images -->
+{% load static %}
+
 {% block title %}{{ website_name }} > {{ page_name }}{% endblock %}
 
 {% block content %}
-    <h1>{{ page_name }}</h1>
+
+<h1>{{ page_name }}</h1>
+
+<img src="{% static 'firstapp/statement/locations_divided.gif' %}" alt="Visit Art, Twin Art Tours">
+
+<div>
+    <h2>Artist Statement</h2>
+    <p>Kelli Fifield identifies with art. She has trained in theater and dance. Her watercolors are detailed,
+        realistic and delicately graceful.</p>
+
+    <h2>Gallery History</h2>
+    <p>Kelli opened her gallery in 2001 on Como Avenue in Minneapolis, Minnesota.</p>
+    <p>The gallery hosted monthly art openings featuring local and emerging artists.</p>
+    <p>The gallery has moved to three other locations in it's history, to East Hennepin Avenue, to University
+        Avenue and finally to St. Paul on Cleveland Avenue in the historic Edith Bush Theatre Building.</p>
+</div>
 
 {% endblock %}
