@@ -50,3 +50,12 @@ footer {
     font-size: 1.5em;
     text-align: center;
 }
+
+/* contact page */
+form label {
+    color: white;
+}
+
+form input, form textarea {
+    margin-bottom: 10px;
+}
