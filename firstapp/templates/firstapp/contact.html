@@ -1,8 +1,13 @@
 {% extends 'firstapp/base.html' %}
 
+<!-- load static for images -->
+{% load static %}
+
 {% block title %}{{ website_name }} > {{ page_name }}{% endblock %}
 
 {% block content %}
-    <h1>{{ page_name }}</h1>
+    <!-- <h1>{{ page_name }}</h1> -->
+
+    <img src="{% static 'firstapp/contact/flamencopointdancer.png' %}" alt="Contact Kelli">
 
 {% endblock %}

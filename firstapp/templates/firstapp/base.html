@@ -8,14 +8,22 @@
     <title>{% block title %} missing title {% endblock %}</title>
     <!-- run python manage.py collectstatic in prod to copy static files into the STATIC_ROOT directory -->
     <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
+
 </head>
 <body>
     <header>
         <!-- Header content -->
-        <a href="{% url 'home' %}">home</a>
-        <a href="{% url 'contact' %}">contact</a>
-        <a href="{% url 'portfolio' %}">portfolio</a>
-        <a href="{% url 'statement' %}">statement</a>
+        <div id="nav-links">
+            <a href="{% url 'home' %}">home</a>
+            <a href="{% url 'contact' %}">contact</a>
+            <a href="{% url 'portfolio' %}">portfolio</a>
+            <a href="{% url 'statement' %}">statement</a>
+        </div>
+        <div id="business-name">Tea Leaf Gallery</div>
     </header>
 
     <main>
@@ -26,6 +34,7 @@
 
     <footer>
         <!-- Footer content -->
+        <p id="reality">Reality Requires Art</p>
         <p>Copyright © 2024 Kelli Fifield. All rights reserved.</p>
         <p>Designed by <b>Websites from Planet X</b>.</p>
     </footer>

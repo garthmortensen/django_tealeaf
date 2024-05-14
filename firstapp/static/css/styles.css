@@ -1,5 +1,36 @@
+html,
 body {
-    background: #71714c;  
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: darkgreen;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    color: white;
+}
+
+#nav-links a {
+    font-size: 1.5em;
+    color: white;
+    text-decoration: none;
+    /* remove the underline from the links */
+}
+
+#business-name {
+    /* font-family: 'Georgia', sans-serif; */
+    font-size: 2em;
+    /* text-align: right; */
+    font-family: "Caveat", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+body {
+    background: #71714c;
     /* background: #ccc; */
     display: flex;
     flex-direction: column;
@@ -12,5 +43,10 @@ main {
 
 footer {
     flex-shrink: 0;
+    text-align: center;
+}
+
+#reality {
+    font-size: 1.5em;
     text-align: center;
 }
