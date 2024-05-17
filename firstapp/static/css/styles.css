@@ -5,33 +5,37 @@ body {
 }
 
 header {
-    background-color: darkgreen;
+    background-color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    color: white;
+    color: black;
+    border-bottom: 10px solid #c5a55b;
+}
+
+#nav-links {
+    display: flex;
+    justify-content: space-between; /* space out links evenly */
 }
 
 #nav-links a {
+    font-family: Arial, sans-serif;
     font-size: 1.5em;
-    color: white;
-    text-decoration: none;
-    /* remove the underline from the links */
+    text-decoration: none; /* remove the underline from the links */
+    margin: 0 10px;
+    color: black;
 }
 
 #business-name {
-    /* font-family: 'Georgia', sans-serif; */
     font-size: 2em;
-    /* text-align: right; */
     font-family: "Caveat", cursive;
     font-optical-sizing: auto;
     font-style: normal;
 }
 
 body {
-    background: #71714c;
-    /* background: #ccc; */
+    background: rgba(137,149,165,255);
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -53,10 +57,18 @@ footer {
 
 /* page; contact */
 form label {
-    color: white;
+    /* color: white; */
 }
 
 form input, form textarea {
     margin-bottom: 10px;
 }
 
+/* place teapot immediately before footer */
+div.teapot-container {
+    text-align: right;
+}
+
+img.teapot {
+    display: inline-block;
+}
