@@ -7,13 +7,18 @@
     <!-- block tag defines a block named "title". Blocks = template sections that child templates can override.
     Content inside this block tag is the default content for the title of the page -->
     <title>{% block title %} missing title {% endblock %}</title>
-    <!-- run python manage.py collectstatic in prod to copy static files into the STATIC_ROOT directory -->
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <!-- custom css -->
     <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
 
+    <!-- custom fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
 
+    <!-- favicon -->
     <link rel="icon" href="{% static 'firstapp/favicon.ico' %}">
 </head>
 
@@ -46,6 +51,10 @@
         <p>Copyright © 2024 Kelli Fifield. All rights reserved.</p>
         <p>Alien-esque tech solutions by <b>Websites from Planet X</b>.</p>
     </footer>
+
+    <!-- bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 </body>
 
 </html>

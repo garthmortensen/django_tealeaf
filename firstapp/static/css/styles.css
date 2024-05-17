@@ -45,6 +45,43 @@ main {
     flex: 1 0 auto;
 }
 
+
+/* statement */
+.content-container {
+    display: grid;
+    grid-template-columns: 1fr 9fr; /* define two columns, one for the image and one for the text */
+    gap: 10px; /* space between the columns */
+    background-color: #8893a4;
+    padding: 20px;
+}
+
+.image-section img {
+    max-width: 500px;
+    height: auto;
+    margin: auto; /* center the image if it's smaller than the container */
+}
+
+.text-section {
+    padding: 10px;
+}
+
+.text-content {
+    background-color: white;
+    padding: 20px;
+    max-width: 40%; /* adjust to thin box */
+}
+
+
+
+/* place teapot immediately before footer */
+div.teapot-container {
+    text-align: right;
+}
+
+img.teapot {
+    display: inline-block;
+}
+
 footer {
     flex-shrink: 0;
     text-align: center;
@@ -55,20 +92,5 @@ footer {
     text-align: center;
 }
 
-/* page; contact */
-form label {
-    /* color: white; */
-}
 
-form input, form textarea {
-    margin-bottom: 10px;
-}
 
-/* place teapot immediately before footer */
-div.teapot-container {
-    text-align: right;
-}
-
-img.teapot {
-    display: inline-block;
-}
