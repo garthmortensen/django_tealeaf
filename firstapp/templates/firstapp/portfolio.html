@@ -1,7 +1,12 @@
 {% extends 'firstapp/base.html' %}
 
+<!-- load static for images -->
+{% load static %}
+
 {% block title %}{{ website_name }} > {{ page_name }}{% endblock %}
 
 {% block content %}
+
+<!-- <img src="{% static 'firstapp/teapot.png' %}" alt="teapot"> -->
 
 {% endblock %}

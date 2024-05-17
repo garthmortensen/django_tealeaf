@@ -13,15 +13,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
 
+    <link rel="icon" href="{% static 'firstapp/favicon.ico' %}">
 </head>
 <body>
     <header>
         <!-- Header content -->
         <div id="nav-links">
             <a href="{% url 'home' %}">home</a>
-            <a href="{% url 'contact' %}">contact</a>
             <a href="{% url 'portfolio' %}">portfolio</a>
             <a href="{% url 'statement' %}">statement</a>
+            <a href="{% url 'contact' %}">contact</a>
         </div>
         <div id="business-name">Tea Leaf Gallery</div>
     </header>
@@ -29,6 +30,7 @@
     <main>
         <!-- Content from child templates -->
         {% block content %}
+        <img src="{% static 'firstapp/teapot.png' %}" alt="teapot">
         {% endblock %}
     </main>
 
@@ -36,7 +38,7 @@
         <!-- Footer content -->
         <p id="reality">Reality Requires Art</p>
         <p>Copyright © 2024 Kelli Fifield. All rights reserved.</p>
-        <p>Designed by <b>Websites from Planet X</b>.</p>
+        <p>Alien-esque tech solutions by <b>Websites from Planet X</b>.</p>
     </footer>
 </body>
 </html>
