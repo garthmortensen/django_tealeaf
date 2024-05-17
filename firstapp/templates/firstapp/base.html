@@ -1,6 +1,7 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <!-- block tag defines a block named "title". Blocks = template sections that child templates can override.
@@ -15,6 +16,7 @@
 
     <link rel="icon" href="{% static 'firstapp/favicon.ico' %}">
 </head>
+
 <body>
     <header>
         <!-- Header content -->
@@ -28,10 +30,10 @@
     </header>
 
     <main>
-        <!-- Content from child templates -->
         {% block content %}
-        <img src="{% static 'firstapp/teapot.png' %}" alt="teapot">
         {% endblock %}
+
+        <img class="teapot" src="{% static 'firstapp/teapot.png' %}" alt="teapot">
     </main>
 
     <footer>
@@ -41,4 +43,5 @@
         <p>Alien-esque tech solutions by <b>Websites from Planet X</b>.</p>
     </footer>
 </body>
+
 </html>
