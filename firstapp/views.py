@@ -18,23 +18,23 @@ def contact(request):
 
 
 def landscapes(request):
-    context = {'title': 'Landscapes'}
+    context = {'page_name': 'Landscapes'}
     return render(request, 'firstapp/portfolio/landscapes.html', context)
 
 def japanese_koi_fish(request):
-    context = {'title': 'Japanese Koi Fish'}
+    context = {'page_name': 'Japanese Koi Fish'}
     return render(request, 'firstapp/portfolio/japanese_koi_fish.html', context)
 
 def food(request):
-    context = {'title': 'Food'}
+    context = {'page_name': 'Food'}
     return render(request, 'firstapp/portfolio/food.html', context)
 
 def wooden_kokeshi_dolls(request):
-    context = {'title': 'Wooden Kokeshi Dolls'}
+    context = {'page_name': 'Wooden Kokeshi Dolls'}
     return render(request, 'firstapp/portfolio/wooden_kokeshi_dolls.html', context)
 
 def teapots(request):
-    context = {'title': 'Teapots'}
+    context = {'page_name': 'Teapots'}
     return render(request, 'firstapp/portfolio/teapots.html', context)
 
 
