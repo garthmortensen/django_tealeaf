@@ -24,13 +24,24 @@
 
 <body>
     <header>
-        <!-- Header content -->
         <div id="nav-links">
             <a href="{% url 'home' %}">Home</a>
-            <a href="{% url 'portfolio' %}">Portfolio</a>
+            <div class="dropdown">
+                <a class="dropdown-toggle" href="#" role="button" id="portfolioDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Portfolio
+                </a>
+                <div class="dropdown-menu" aria-labelledby="portfolioDropdown">
+                    <a class="dropdown-item" href="{% url 'landscapes' %}">Landscapes</a>
+                    <a class="dropdown-item" href="{% url 'japanese_koi_fish' %}">Japanese Koi Fish</a>
+                    <a class="dropdown-item" href="{% url 'food' %}">Food</a>
+                    <a class="dropdown-item" href="{% url 'wooden_kokeshi_dolls' %}">Wooden Kokeshi Dolls</a>
+                    <a class="dropdown-item" href="{% url 'teapots' %}">Teapots</a>
+                </div>
+            </div>
             <a href="{% url 'statement' %}">Statement</a>
             <a href="{% url 'contact' %}">Contact</a>
         </div>
+
         <div id="business-name">Tea Leaf Gallery</div>
     </header>
 
@@ -54,6 +65,7 @@
 
     <!-- bootstrap -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 </body>
 
