@@ -46,6 +46,42 @@ main {
     flex: 1 0 auto;
 }
 
+/* portfolio */
+#pricing-info {
+    /* color: #ab2e35; */
+    color: black;
+}
+
+#gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.painting {
+    margin: 20px;
+}
+
+.painting:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.5s;
+}
+
+.painting-image {
+    width: 100%;
+    height: auto;
+}
+
+.painting-title {
+    text-align: center;
+    padding: 10px;
+}
+
+.painting-description {
+    text-align: center;
+    padding: 10px;
+}
+
 /* statement */
 .content-container {
     display: grid;
@@ -73,7 +109,6 @@ main {
 
 
 /* contact us */
-
 .dancer-container {
     padding: 10px;
 }

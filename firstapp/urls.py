@@ -1,35 +1,25 @@
 from django.urls import path
+from django.conf import settings
+from django.conf.urls.static import static
 from .views import (
     home,
     contact,
-    landscapes,
-    japanese_koi_fish,
-    food,
-    wooden_kokeshi_dolls,
-    teapots,
     statement,
 )
-
+# content management
 from .views import CategoryListView, PaintingListView
-
-from django.conf import settings
-from django.conf.urls.static import static
 
 # create a list of URL patterns
 urlpatterns = [
+    # Home: http://127.0.0.1:8000/
     path(route="", view=home, name="home"),
-    path(route="contact/", view=contact, name="contact"),
-    path(route="landscapes/", view=landscapes, name="landscapes"),
-    path(route="japanese_koi_fish/", view=japanese_koi_fish, name="japanese_koi_fish"),
-    path(route="food/", view=food, name="food"),
-    path(
-        route="wooden_kokeshi_dolls/",
-        view=wooden_kokeshi_dolls,
-        name="wooden_kokeshi_dolls",
-    ),
-    path(route="teapots/", view=teapots, name="teapots"),
+    # Home: http://127.0.0.1:8000/statement
     path(route="statement/", view=statement, name="statement"),
+    # Home: http://127.0.0.1:8000/contact
+    path(route="contact/", view=contact, name="contact"),
+    # Home: http://127.0.0.1:8000/
     path(route="", view=CategoryListView.as_view(), name="category-list"),
+    # http://127.0.0.1:8000/category/Landscapes/
     path(
         route="category/<str:category_name>/",
         view=PaintingListView.as_view(),

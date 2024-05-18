@@ -5,12 +5,13 @@
 {% block content %}
 
 <h2>Paintings</h2>
-<div>
+<p id="pricing-info">$59 for 8"x10" (+$29 for silver metal frame). Free shipping for most items.</p>
+<div id="gallery">
   {% for painting in paintings %}
-  <div>
-    <h3>{{ painting.title }}</h3>
-    <img src="{{ painting.image.url }}" alt="{{ painting.title }}">
-    <p>{{ painting.description }}</p>
+  <div class="painting">
+    <h3 class="painting-title">{{ painting.title }}</h3>
+    <img class="painting-image" src="{{ painting.image.url }}" alt="{{ painting.title }}">
+    <p class="painting-description">{{ painting.description }}</p>
   </div>
   {% endfor %}
 </div>
