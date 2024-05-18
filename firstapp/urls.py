@@ -6,6 +6,7 @@ from .views import (
     contact,
     statement,
 )
+
 # content management
 from .views import CategoryListView, PaintingListView
 

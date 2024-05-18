@@ -9,7 +9,9 @@ class PaintingAdmin(admin.ModelAdmin):
     # need to define a function to get the image path
     def image_path(self, obj):
         return obj.image.name
+
     image_path.short_description = "Image Path"
+
 
 admin.site.register(Category)
 admin.site.register(Painting, PaintingAdmin)
