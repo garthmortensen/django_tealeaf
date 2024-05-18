@@ -32,11 +32,9 @@
                     Portfolio
                 </a>
                 <div class="dropdown-menu" aria-labelledby="portfolioDropdown">
-                    <a class="dropdown-item" href="{% url 'landscapes' %}">Landscapes</a>
-                    <a class="dropdown-item" href="{% url 'japanese_koi_fish' %}">Japanese Koi Fish</a>
-                    <a class="dropdown-item" href="{% url 'food' %}">Food</a>
-                    <a class="dropdown-item" href="{% url 'wooden_kokeshi_dolls' %}">Wooden Kokeshi Dolls</a>
-                    <a class="dropdown-item" href="{% url 'teapots' %}">Teapots</a>
+                    {% for category in categories %}
+                        <a class="dropdown-item" href="{% url 'painting-list' category_name=category.name %}">{{ category.name }}</a>
+                    {% endfor %}
                 </div>
             </div>
             <a href="{% url 'statement' %}">Statement</a>

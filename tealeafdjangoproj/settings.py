@@ -65,6 +65,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'firstapp.context_processors.website_name',  # variable becomes universally available
+                'firstapp.context_processors.categories',  # for dynamically populating the navigation bar
             ],
         },
     },

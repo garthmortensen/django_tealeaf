@@ -8,3 +8,5 @@ Tree just wanted files:
 ```bash
 tree -I '__pycache__|venv|.git|db.sqlite3|static|media|node_modules'
 ```
+
+http://127.0.0.1:8000/category/food/
