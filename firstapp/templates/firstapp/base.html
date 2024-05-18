@@ -28,12 +28,14 @@
             <a href="{% url 'home' %}">Home</a>
             <!-- portfolio -->
             <div class="dropdown">
-                <a class="dropdown-toggle" href="#" role="button" id="portfolioDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="dropdown-toggle" href="#" role="button" id="portfolioDropdown" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
                     Portfolio
                 </a>
                 <div class="dropdown-menu" aria-labelledby="portfolioDropdown">
                     {% for category in categories %}
-                        <a class="dropdown-item" href="{% url 'painting-list' category_name=category.name %}">{{ category.name }}</a>
+                    <a class="dropdown-item" href="{% url 'painting-list' category_name=category.name %}">{{
+                        category.name }}</a>
                     {% endfor %}
                 </div>
             </div>
