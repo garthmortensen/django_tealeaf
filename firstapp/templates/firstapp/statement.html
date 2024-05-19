@@ -1,8 +1,11 @@
 {% extends 'firstapp/base.html' %}
 
 <!-- load static for images -->
-{% load static %} {% block title %}{{ website_name }} > {{ page_name }}{%
-endblock %} {% block content %}
+{% load static %}
+
+{% block title %}{{ website_name }} > {{ page_name }}{% endblock %}
+
+{% block content %}
 <div class="content-container">
     <div class="image-section">
         <img src="{% static 'firstapp/statement/locations_divided.gif' %}" alt="Visit Art, Twin Art Tours" />
