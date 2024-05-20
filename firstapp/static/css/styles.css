@@ -82,6 +82,18 @@ main {
     padding: 10px;
 }
 
+
+/* conditionally set width or height depending on painting_list.html css class, which is set per image in models.py */
+.painting-image.portrait {
+    width: auto;
+    height: 500px;
+}
+
+.painting-image.landscape {
+    width: 500px;
+    height: auto;
+}
+
 /* statement */
 .content-container {
     display: grid;

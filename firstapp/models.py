@@ -1,5 +1,5 @@
 from django.db import models
-
+from PIL import Image  # for image orientation
 
 class Category(models.Model):
     name = models.CharField(max_length=100)
@@ -19,6 +19,12 @@ class Painting(models.Model):
     title = models.CharField(max_length=200)
     description = models.TextField()
     image = models.ImageField(upload_to=get_upload_path)
+
+    # determine if the image is portrait or landscape, and return the orientation
+    # this is used to set the image dimensions in the template
+    def image_orientation(self):
+        image = Image.open(self.image.path)
+        return 'portrait' if image.height > image.width else 'landscape'
 
     def __str__(self):
         return self.title

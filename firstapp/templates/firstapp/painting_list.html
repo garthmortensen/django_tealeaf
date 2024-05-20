@@ -4,16 +4,27 @@
 
 {% block content %}
 
-<h2>Paintings</h2>
-<p id="pricing-info">$59 for 8"x10" (+$29 for silver metal frame). Free shipping for most items.</p>
+<h2>Portfolio > {{ page_name }}</h2>
+
+{% if page_name == "Teapots" %}
+<p>The YIXING TEAPOTS have become an obsession for me since I noticed them during a trip to China in 1989. These small unglazed pots are traditional in the mainland and have been exported abroad since the 1600s. The simple Yixing clay pot is said to best capture the color and fragrance of loose leaf tea. The designs are particular to an individual artist and reflect cultural and/or philosophical ideas.</p>
+{% elif page_name == "Japanese_Koi_Fish" %}
+    <p>The recent series of "Swimming Koi" paintings were inspired by my ten year stint interpreting at Como Park's Japanese Garden. The water feature there included scores of lively colorful koi.</p>
+{% elif page_name == "Wooden_Kokeshi_Dolls" %}
+    <p>KOKESHI are hand carved Japanese wooden dolls. Originally produced in areas in the Tohoku region they likely originated from woodworker scraps in the 1800s. Each of the twelve styles have their own motifs. They are minimalist in design with no arms or legs. Many Kokeshi are elegantly painted and have been collectable in the U.S. since the 1940s.</p>
+{% endif %}
+
 <div id="gallery">
   {% for painting in paintings %}
   <div class="painting">
     <h3 class="painting-title">{{ painting.title }}</h3>
-    <img class="painting-image" src="{{ painting.image.url }}" alt="{{ painting.title }}">
+    <!-- conditionally set the class using Painting objects orientation attribute, determined by models.py -->
+    <img class="painting-image {{ painting.image_orientation }}" src="{{ painting.image.url }}" alt="{{ painting.title }}">
     <p class="painting-description">{{ painting.description }}</p>
   </div>
   {% endfor %}
 </div>
+
+<p id="pricing-info">$59 for 8"x10" (+$29 for silver metal frame). Free shipping for most items.</p>
 
 {% endblock %}
