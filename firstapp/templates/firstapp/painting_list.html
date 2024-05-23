@@ -1,10 +1,11 @@
 {% extends 'firstapp/base.html' %}
+{% load custom_filters %} <!-- for replace_chars - replaces underscores in categories with spaces, for clean display-->
 
-{% block title %}{{ website_name }} > {{ page_name }}{% endblock %}
+{% block title %}{{ website_name }} > {{ page_name|replace_chars }}{% endblock %}
 
 {% block content %}
 
-<h2>Portfolio > {{ page_name }}</h2>
+<p>Portfolio / {{ page_name|replace_chars }}</p>
 
 {% if page_name == "Teapots" %}
 <p>The YIXING TEAPOTS have become an obsession for me since I noticed them during a trip to China in 1989. These small unglazed pots are traditional in the mainland and have been exported abroad since the 1600s. The simple Yixing clay pot is said to best capture the color and fragrance of loose leaf tea. The designs are particular to an individual artist and reflect cultural and/or philosophical ideas.</p>
