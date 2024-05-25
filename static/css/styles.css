@@ -1,30 +1,32 @@
-/* https://coolors.co/palette/22223b-4a4e69-9a8c98-c9ada7-f2e9e4
+/* CSS Variables for color scheme based on yixing clay colors */
 
+/* https://coolors.co/palette/22223b-4a4e69-9a8c98-c9ada7-f2e9e4
 going with a yixing clay colorscheme, used for chinese teapots (prized for porous quality).
 but the clay is too vibrant for background colors, so I'm using muted shades of the colors.
 this way, the viewer is draw to the paintings and not the background.
-
-22223B - very dark shade of blue-gray
-4A4E69 - dark shade of blue-gray
-9A8C98 - muted shade of lavender-gray
-C9ADA7 - pale, dusty shade of pinkish-beige
-F2E9E4 - very light shade of warm beige
 */
 
-html,
-body {
+:root {
+    --dark-blue-gray: #22223B; /* very dark shade of blue-gray */
+    --blue-gray: #4A4E69; /* dark shade of blue-gray */
+    --lavender-gray: #9A8C98; /* muted shade of lavender-gray */
+    --dusty-pink: #C9ADA7; /* pale, dusty shade of pinkish-beige */
+    --warm-beige: #F2E9E4; /* very light shade of warm beige */
+}
+
+html, body {
     margin: 0px;
     padding: 0px;
 }
 
 header {
-    background-color: #F2E9E4;
+    background-color: var(--warm-beige);
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    color: #22223B;
-    border-bottom: 10px solid #C9ADA7;
+    color: var(--dark-blue-gray);
+    border-bottom: 10px solid var(--dusty-pink);
 }
 
 #nav-links {
@@ -32,12 +34,20 @@ header {
     justify-content: space-between; /* space out links evenly */
 }
 
-#nav-links a {
+#nav-links a.nav-link {
     font-family: Arial, sans-serif;
-    font-size: 1.5em;
-    text-decoration: none; /* remove the underline from the links */
+    font-size: 1.5em;  /* Ensuring all nav links have the same font size */
+    text-decoration: none; /* Removing underline */
     margin: 0 10px;
-    color: #22223B;
+    color: var(--dark-blue-gray); /* Ensuring uniform color */
+    background-color: transparent; /* Removing any background color from Bootstrap styles */
+    border: none; /* Removing any borders */
+    padding: 0.5em 1em; /* Adjust padding as needed */
+}
+
+#nav-links a.nav-link:hover, #nav-links a.nav-link:focus {
+    color: var(--blue-gray); /* Hover and focus color */
+    text-decoration: none; /* Ensuring no underline appears on hover/focus */
 }
 
 #business-name {
@@ -48,7 +58,7 @@ header {
 }
 
 body {
-    background: #C9ADA7;
+    background: var(--dusty-pink);
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -59,10 +69,8 @@ main {
     flex: 1 0 auto;
 }
 
-/* portfolio */
 #pricing-info {
-    /* color: #ab2e35; */
-    color: #22223B;
+    color: var(--dark-blue-gray);
 }
 
 #gallery {
@@ -95,8 +103,6 @@ main {
     padding: 10px;
 }
 
-
-/* conditionally set width or height depending on painting_list.html css class, which is set per image in models.py */
 .painting-image.portrait {
     width: auto;
     height: 500px;
@@ -107,7 +113,6 @@ main {
     height: auto;
 }
 
-/* home */
 .easel-container {
     width: 100vw; /* Set width relative to viewport width */
     height: auto;
@@ -117,18 +122,17 @@ main {
     margin-right: auto;
 }
 
-/* statement */
 .content-container {
     display: flex;
     justify-content: center;
-    background-color: #9A8C98;
+    background-color: var(--lavender-gray);
     padding: 20px;
     width: 50vw;
     margin: 0 auto;
 }
 
 .text-section {
-    background-color: #F2E9E4;
+    background-color: var(--warm-beige);
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -151,21 +155,18 @@ main {
     width: 100%;
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
     .image-section img {
         transform: rotate(0deg); /* Optional: Reset rotation on smaller screens if needed */
     }
 }
 
-
-/* contact us */
 .dancer-container {
     padding: 10px;
 }
 
 .text-muted {
-    color: #22223B !important;
+    color: var(--dark-blue-gray) !important;
 }
 
 .contact-form .form-control {
@@ -175,8 +176,6 @@ main {
     margin-right: auto;
 }
 
-/* place teapot immediately before footer */
-/* Adjustments to ensure the teapot is always at the bottom right of the screen */
 div.teapot-container {
     position: fixed; /* Use fixed positioning */
     right: 0; /* Align to the right */
@@ -199,3 +198,18 @@ footer {
     font-size: 1.5em;
     text-align: center;
 }
+
+/* hide content for all except screen reader users */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* debugging */
+* { border: 1px solid red; }
