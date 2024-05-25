@@ -18,7 +18,7 @@ from dotenv import load_dotenv
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # this works when .env is in parent directory of settings.py
-dotenv_path = BASE_DIR / '.env'
+dotenv_path = BASE_DIR / ".env"
 load_dotenv(dotenv_path)
 SECRET_KEY = os.getenv("SECRET_KEY")
 
@@ -29,7 +29,15 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 # DEBUG = True
 DEBUG = os.getenv("DEBUG")
 
-ALLOWED_HOSTS = ["*"]
+# Detect if running on PythonAnywhere
+if "PYTHONANYWHERE_DOMAIN" in os.environ:
+    print("PYTHONANYWHERE environment is detected")
+    ALLOWED_HOSTS = ["webdevpony.pythonanywhere.com", 
+                     #"www.yourcustomdomain.com"
+                     ]
+else:
+    print("PYTHONANYWHERE environment is not detected")
+    ALLOWED_HOSTS = ["*"]
 
 
 # Application definition

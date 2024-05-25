@@ -14,7 +14,7 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 print("SECRET_KEY:", SECRET_KEY)
 
 # Detect if running on PythonAnywhere
-if 'PYTHONANYWHERE_DOMAIN' in os.environ:
+if "PYTHONANYWHERE_DOMAIN" in os.environ:
     print("PYTHONANYWHERE environment is detected")
 else:
     print("PYTHONANYWHERE environment is not detected")
