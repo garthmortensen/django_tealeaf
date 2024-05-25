@@ -21,9 +21,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "$GrsgrsfES$%TRSGkyyGRDykl1%ma4iukpl)nur8u!1nt*e!tf!*v!-e8r51u4m*$-wzlxil"
-# SECRET_KEY = os.getenv("SECRET_KEY")
+dotenv_path = BASE_DIR.parent / '.env'
+load_dotenv(dotenv_path)
+SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
