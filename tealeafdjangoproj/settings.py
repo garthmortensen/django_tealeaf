@@ -25,9 +25,6 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
-# SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True
-DEBUG = os.getenv("DEBUG")
 
 # Detect if running on PythonAnywhere
 if "PYTHONANYWHERE_DOMAIN" in os.environ:
@@ -35,10 +32,13 @@ if "PYTHONANYWHERE_DOMAIN" in os.environ:
     ALLOWED_HOSTS = ["webdevpony.pythonanywhere.com", 
                      #"www.yourcustomdomain.com"
                      ]
+    # SECURITY WARNING: don't run with debug turned on in production!
+    DEBUG = False
+
 else:
     print("PYTHONANYWHERE environment is not detected")
     ALLOWED_HOSTS = ["*"]
-
+    DEBUG = True
 
 # Application definition
 
