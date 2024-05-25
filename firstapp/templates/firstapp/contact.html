@@ -6,33 +6,43 @@
 {% block title %}{{ website_name }} > {{ page_name }}{% endblock %}
 
 {% block content %}
-<div class="content-container">
-    <div class="text-section">
-        <img class="dancer-container" src="{% static 'firstapp/contact/flamencopointdancer.png' %}" alt="Contact Kelli">
+<!-- <main> to indicate the main content of the page -->
+<main class="content-container">
+    <!-- <section> to group related content -->
+    <section class="text-section">
+        <!-- <figure> for self-contained content that is related to the main content -->
+        <figure class="dancer-container">
+            <img src="{% static 'firstapp/contact/flamencopointdancer.png' %}" alt="Contact Kelli">
+        </figure>
 
-        <div class="text-content">
-            <h2>Contact Us</h2>
+        <!-- <article> for self-contained content -->
+        <article class="text-content">
+            <header>
+                <h2>Contact Us</h2>
+            </header>
+            <!-- <form> to group form elements -->
             <form class="contact-form">
-                <div class="form-group">
+                <!-- <fieldset> to group related form controls -->
+                <fieldset class="form-group">
                     <label for="name">Name:</label>
                     <input type="text" class="form-control" id="name" name="name" maxlength="50" required aria-label="Your Name">
-                </div>
+                </fieldset>
 
-                <div class="form-group">
+                <fieldset class="form-group">
                     <label for="email">Email Address:</label>
                     <input type="email" class="form-control" id="email" name="email" maxlength="254" required
                         pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" aria-label="Your Email Address">
-                </div>
+                </fieldset>
 
-                <div class="form-group">
+                <fieldset class="form-group">
                     <label for="message">Message:</label>
                     <textarea class="form-control" id="message" name="message" minlength="10" maxlength="1000" required
                         aria-label="Your Message"></textarea>
-                </div>
+                </fieldset>
 
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
-        </div>
-    </div>
-</div>
+        </article>
+    </section>
+</main>
 {% endblock %}

@@ -6,15 +6,22 @@
 {% block title %}{{ website_name }} > {{ page_name }}{% endblock %}
 
 {% block content %}
-<div class="content-container">
-    <div class="text-section">
-        <div class="text-content">
-            <h2>Artist Statement</h2>
+<!-- <main> to indicate the main content of the page -->
+<main class="content-container">
+    <!-- <section> to group related content -->
+    <section class="text-section">
+        <!-- <article> for self-contained content -->
+        <article class="text-content">
+            <header>
+                <h2>Artist Statement</h2>
+            </header>
             <p>
                 Kelli Fifield identifies with art. She has trained in theater and dance.
                 Her watercolors are detailed, realistic and delicately graceful.
             </p>
-            <h2>Gallery History</h2>
+            <header>
+                <h2>Gallery History</h2>
+            </header>
             <p>
                 Kelli opened her gallery in 2001 on Como Avenue in Minneapolis, Minnesota.
             </p>
@@ -26,11 +33,11 @@
                 Hennepin Avenue, to University Avenue and finally to St. Paul on
                 Cleveland Avenue in the historic Edith Bush Theatre Building.
             </p>
-        </div>
-        <div class="image-section">
+        </article>
+        <!-- <figure> for self-contained content that is related to the main content -->
+        <figure class="image-section">
             <img src="{% static 'firstapp/statement/locations_divided.gif' %}" alt="Visit Art, Twin Art Tours" />
-        </div>
-
-    </div>
-</div>
+        </figure>
+    </section>
+</main>
 {% endblock %}
