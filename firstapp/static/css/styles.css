@@ -175,17 +175,21 @@ main {
     margin-right: auto;
 }
 
+/* hidden */
 div.teapot-container {
     position: fixed; /* Use fixed positioning */
     right: 0; /* Align to the right */
     bottom: 0; /* Align to the bottom */
     margin: 0; /* Remove any margin */
+    display: none;
 }
 
+/* hidden */
 img.teapot {
     display: block; /* Change display to block */
     max-width: 100px; /* Set a max width if necessary */
     height: auto; /* Maintain aspect ratio */
+    display: none;
 }
 
 footer {
@@ -216,3 +220,11 @@ footer {
 
 /* debugging */
 /* * { border: 1px solid red; } */
+
+
+@media (max-width: 768px) {
+    .painting-image.portrait, .painting-image.landscape {
+        max-width: 100%; /* Limit width to device width */
+        height: auto; /* Adjust height automatically */
+    }
+}
