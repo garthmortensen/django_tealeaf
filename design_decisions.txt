@@ -1,0 +1,8 @@
+From the beginning, start with base.html.
+Start by sourcing the latest bootstrap content. Include integrities for safety.
+Form the HTML skeleton using HTML5 semantics for more meaningful parsing.
+Make production ready with python-dotenv, since django secret key prevents session hijacking, etc
+
+control css colors with :root {} and variable names, sourcing a good palette from website called Cooler.
+
+include aria labels, etc for accessibility.

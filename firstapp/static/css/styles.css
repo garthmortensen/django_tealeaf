@@ -34,12 +34,20 @@ header {
     justify-content: space-between; /* space out links evenly */
 }
 
-#nav-links a {
+#nav-links a.nav-link {
     font-family: Arial, sans-serif;
-    font-size: 1.5em;
-    text-decoration: none; /* remove the underline from the links */
+    font-size: 1.5em;  /* Ensuring all nav links have the same font size */
+    text-decoration: none; /* Removing underline */
     margin: 0 10px;
-    color: var(--dark-blue-gray);
+    color: var(--dark-blue-gray); /* Ensuring uniform color */
+    background-color: transparent; /* Removing any background color from Bootstrap styles */
+    border: none; /* Removing any borders */
+    padding: 0.5em 1em; /* Adjust padding as needed */
+}
+
+#nav-links a.nav-link:hover, #nav-links a.nav-link:focus {
+    color: var(--blue-gray); /* Hover and focus color */
+    text-decoration: none; /* Ensuring no underline appears on hover/focus */
 }
 
 #business-name {
@@ -189,4 +197,16 @@ footer {
 #reality {
     font-size: 1.5em;
     text-align: center;
+}
+
+/* hide content for all except screen reader users */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
 }
