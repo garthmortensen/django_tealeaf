@@ -21,8 +21,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
-dotenv_path = BASE_DIR.parent / '.env'
-load_dotenv(dotenv_path)
+project_folder = os.path.expanduser("~/django_tealeaf")
+load_dotenv(os.path.join(project_folder, ".env"))
 SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
