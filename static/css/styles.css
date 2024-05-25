@@ -26,7 +26,6 @@ header {
     align-items: center;
     padding: 10px;
     color: var(--dark-blue-gray);
-    border-bottom: 10px solid var(--dusty-pink);
 }
 
 #nav-links {
@@ -170,7 +169,7 @@ main {
 }
 
 .contact-form .form-control {
-    width: 40%;
+    width: 100%;
     display: block;
     margin-left: 0;
     margin-right: auto;
@@ -199,6 +198,10 @@ footer {
     text-align: center;
 }
 
+.planetx {
+    color: var(--dark-blue-gray);
+}
+
 /* hide content for all except screen reader users */
 .sr-only {
     position: absolute;
@@ -212,4 +215,4 @@ footer {
 }
 
 /* debugging */
-* { border: 1px solid red; }
+/* * { border: 1px solid red; } */
