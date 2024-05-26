@@ -128,8 +128,7 @@ USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/4.2/howto/static-files/
-
+# https://docs.djangoproject.com/en/5.0/howto/static-files/
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
@@ -142,5 +141,18 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
-# python everywhere
-STATIC_ROOT = os.path.join(BASE_DIR, "static")
+
+
+
+
+# https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/#https
+# Configure Django Settings for Secure Cookies
+
+# Use a secure CSRF cookie
+# Set this to True to avoid transmitting the CSRF cookie over HTTP accidentally.
+CSRF_COOKIE_SECURE = True
+
+# Use a secure session cookie
+# Set this to True to avoid transmitting the session cookie over HTTP accidentally.
+SESSION_COOKIE_SECURE = True
+
