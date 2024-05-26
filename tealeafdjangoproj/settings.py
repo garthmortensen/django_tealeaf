@@ -147,14 +147,24 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 # https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/#https
 # Configure Django Settings for Secure Cookies
-
 # Use a secure CSRF cookie
 # Set this to True to avoid transmitting the CSRF cookie over HTTP accidentally.
 CSRF_COOKIE_SECURE = True
-
 # Use a secure session cookie
 # Set this to True to avoid transmitting the session cookie over HTTP accidentally.
 SESSION_COOKIE_SECURE = True
-
 # validate:
 # visit http://webdevpony.pythonanywhere.com/ and see if it redirects to https://webdevpony.pythonanywhere.com/
+
+
+# email settings
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.yourserver.com'
+# EMAIL_HOST = env['EMAIL_HOST']
+EMAIL_PORT = 587
+# EMAIL_PORT = env['EMAIL_PORT']
+EMAIL_USE_TLS = True  # security: encrypt data from django to email
+EMAIL_HOST_USER = 'your-email@example.com'
+# EMAIL_HOST_USER = secrets['EMAIL_HOST_USER']
+EMAIL_HOST_PASSWORD = 'your-email-password'  # gmail app password. https://stackoverflow.com/a/76439245
+# EMAIL_HOST_PASSWORD = secrets['EMAIL_HOST_PASSWORD']

@@ -4,6 +4,7 @@ from django.conf.urls.static import static
 from .views import (
     home,
     contact,
+    thank_you,
     statement,
 )
 
@@ -12,13 +13,15 @@ from .views import CategoryListView, PaintingListView
 
 # create a list of URL patterns
 urlpatterns = [
-    # Home: http://127.0.0.1:8000/
+    # http://127.0.0.1:8000/
     path(route="", view=home, name="home"),
-    # Home: http://127.0.0.1:8000/statement
+    # http://127.0.0.1:8000/statement
     path(route="statement/", view=statement, name="statement"),
-    # Home: http://127.0.0.1:8000/contact
+    # http://127.0.0.1:8000/contact
     path(route="contact/", view=contact, name="contact"),
-    # Home: http://127.0.0.1:8000/
+    # http://127.0.0.1:8000/thank_you
+    path(route="thank-you/", view=thank_you, name="thank_you"),
+    # http://127.0.0.1:8000/
     path(route="", view=CategoryListView.as_view(), name="category-list"),
     # http://127.0.0.1:8000/category/Landscapes/
     path(

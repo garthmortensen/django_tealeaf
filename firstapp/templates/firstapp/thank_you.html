@@ -1,0 +1,15 @@
+{% extends 'firstapp/base.html' %}
+
+{% block title %}Thank You{% endblock %}
+
+{% block content %}
+<main class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 text-center">
+            <h1>Thank You!</h1>
+            <p class="lead">Your message has been sent.</p>
+            <a href="{% url 'home' %}" class="btn btn-primary mt-4">Return to Home</a>
+        </div>
+    </div>
+</main>
+{% endblock %}

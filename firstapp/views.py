@@ -5,6 +5,10 @@ from django.http import HttpResponse
 from django.views.generic import ListView
 from .models import Category, Painting
 
+# contact form
+from django.shortcuts import redirect
+from .forms import ContactForm
+
 
 def home(request):
     context = {
@@ -15,10 +19,24 @@ def home(request):
 
 
 def contact(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            # Here you can handle the valid form data, e.g., send an email or save the data
+            # After processing the form, redirect to a new URL to prevent form resubmission:
+            return redirect('thank_you')  # Redirect to a 'thank you' page
+    else:
+        form = ContactForm()
+
     context = {
         "page_name": "contact",
+        "form": form  # Pass the form instance to the template
     }
     return render(request, "firstapp/contact.html", context)
+
+
+def thank_you(request):
+    return render(request, 'firstapp/thank_you.html')
 
 
 def statement(request):
