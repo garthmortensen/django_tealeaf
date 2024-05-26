@@ -156,3 +156,5 @@ CSRF_COOKIE_SECURE = True
 # Set this to True to avoid transmitting the session cookie over HTTP accidentally.
 SESSION_COOKIE_SECURE = True
 
+# validate:
+# visit http://webdevpony.pythonanywhere.com/ and see if it redirects to https://webdevpony.pythonanywhere.com/
