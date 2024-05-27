@@ -26,7 +26,7 @@ def contact(request):
         if form.is_valid():
             name = form.cleaned_data["name"]
             email = form.cleaned_data["email"]
-            message = form.cleaned_config["name"]
+            message = form.cleaned_data["message"]  # Corrected line
             send_mail(
                 f"Message from {name}",
                 message,
