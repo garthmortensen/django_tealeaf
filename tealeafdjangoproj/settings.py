@@ -142,9 +142,6 @@ MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 
-
-
-
 # https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/#https
 # Configure Django Settings for Secure Cookies
 # Use a secure CSRF cookie
@@ -159,12 +156,8 @@ SESSION_COOKIE_SECURE = True
 
 # email settings
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.yourserver.com'
-# EMAIL_HOST = env['EMAIL_HOST']
-EMAIL_PORT = 587
-# EMAIL_PORT = env['EMAIL_PORT']
+EMAIL_HOST = os.getenv("EMAIL_HOST")
+EMAIL_PORT = os.getenv("EMAIL_PORT")
 EMAIL_USE_TLS = True  # security: encrypt data from django to email
-EMAIL_HOST_USER = 'your-email@example.com'
-# EMAIL_HOST_USER = secrets['EMAIL_HOST_USER']
-EMAIL_HOST_PASSWORD = 'your-email-password'  # gmail app password. https://stackoverflow.com/a/76439245
-# EMAIL_HOST_PASSWORD = secrets['EMAIL_HOST_PASSWORD']
+EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER")
+EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")  # gmail app password. https://stackoverflow.com/a/76439245

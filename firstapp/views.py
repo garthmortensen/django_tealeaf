@@ -8,6 +8,7 @@ from .models import Category, Painting
 # contact form
 from django.shortcuts import redirect
 from .forms import ContactForm
+from django.core.mail import send_mail
 
 
 def home(request):
