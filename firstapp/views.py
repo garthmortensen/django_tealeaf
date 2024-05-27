@@ -8,7 +8,6 @@ from .models import Category, Painting
 # contact form
 from django.shortcuts import redirect
 from .forms import ContactForm
-from .forms import ContactDialogForm
 from django.conf import settings
 from django.core.mail import send_mail
 
