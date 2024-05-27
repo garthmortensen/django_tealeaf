@@ -8,6 +8,7 @@ from .models import Category, Painting
 # contact form
 from django.shortcuts import redirect
 from .forms import ContactForm
+from .forms import ContactDialogForm
 from django.conf import settings
 from django.core.mail import send_mail
 
@@ -20,39 +21,28 @@ def home(request):
     return render(request, "firstapp/home.html", context)
 
 
-
 def contact(request):
-    if request.method == 'POST':
+    if request.method == "POST":
         form = ContactForm(request.POST)
         if form.is_valid():
-            # Extract information from the form here
-            name = form.cleaned_data.get('name')
-            email = form.cleaned_data.get('email')
-            message = form.cleaned_data.get('message')
-
-            # Prepare email details
-            subject = f"New Contact from {name}"
-            message = f"Received a message from {name} <{email}>:\n\n{message}"
-            email_from = settings.EMAIL_HOST_USER
-            recipient_list = [settings.EMAIL_HOST_USER]  # You can change this to your email
-
-            # Send the email
-            send_mail(subject, message, email_from, recipient_list)
-
-            # Redirect to a new URL to prevent form resubmission
-            return redirect('thank_you')
+            name = form.cleaned_data["name"]
+            email = form.cleaned_data["email"]
+            message = form.cleaned_config["name"]
+            send_mail(
+                f"Message from {name}",
+                message,
+                email,
+                ["mortensengarth@hotmail.com"],  # Adjust to where you want to receive messages
+                fail_silently=False,
+            )
+            return redirect("thank_you")
     else:
         form = ContactForm()
-
-    context = {
-        "page_name": "contact",
-        "form": form
-    }
-    return render(request, "firstapp/contact.html", context)
+    return render(request, "firstapp/contact.html", {"form": form})
 
 
 def thank_you(request):
-    return render(request, 'firstapp/thank_you.html')
+    return render(request, "firstapp/thank_you.html")
 
 
 def statement(request):
