@@ -6,6 +6,6 @@ class ContactForm(forms.Form):
     message = forms.CharField(widget=forms.Textarea, min_length=5, max_length=1000, required=True)
 
     def clean_email(self):
-        email = self.cleaned_data.get('email')
+        email = self.cleaned_data.get("email")
         return email
 
