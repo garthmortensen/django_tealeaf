@@ -1,15 +1,18 @@
 from django.db import models
 from PIL import Image  # for image orientation
 
+
 class Category(models.Model):
     name = models.CharField(max_length=100)
 
     def __str__(self):
         return self.name
 
+
 # this generates the upload path for the image field
 def get_upload_path(instance, filename):
-    return 'paintings/{}/{}'.format(instance.category.name, filename)
+    return "paintings/{}/{}".format(instance.category.name, filename)
+
 
 # Painting model has FK to the Category model
 class Painting(models.Model):
@@ -24,7 +27,7 @@ class Painting(models.Model):
     # this is used to set the image dimensions in the template
     def image_orientation(self):
         image = Image.open(self.image.path)
-        return 'portrait' if image.height > image.width else 'landscape'
+        return "portrait" if image.height > image.width else "landscape"
 
     def __str__(self):
         return self.title

@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 # Determine the correct path for the .env file
 # This assumes the .env file is in the same directory as the settings.py file
 BASE_DIR = Path(__file__).resolve().parent.parent
-dotenv_path = BASE_DIR / '.env'
+dotenv_path = BASE_DIR / ".env"
 load_dotenv(dotenv_path)
 
 SECRET_KEY = os.getenv("SECRET_KEY")
