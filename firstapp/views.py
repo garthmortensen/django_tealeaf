@@ -15,7 +15,6 @@ from django.core.mail import send_mail
 def home(request):
     context = {
         "page_name": "home",
-        # "message": "Hello, user!",
     }
     return render(request, "firstapp/home.html", context)
 
@@ -26,12 +25,12 @@ def contact(request):
         if form.is_valid():
             name = form.cleaned_data["name"]
             email = form.cleaned_data["email"]
-            message = form.cleaned_data["message"]  # Corrected line
+            message = form.cleaned_data["message"]
             send_mail(
                 f"Message from {name}",
                 message,
                 email,
-                ["mortensengarth@hotmail.com"],  # Adjust to where you want to receive messages
+                ["websitesfromplanetx@gmail.com"],
                 fail_silently=False,
             )
             return redirect("thank_you")

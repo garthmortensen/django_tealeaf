@@ -160,4 +160,4 @@ EMAIL_HOST = os.getenv("EMAIL_HOST")
 EMAIL_PORT = os.getenv("EMAIL_PORT")
 EMAIL_USE_TLS = True  # security: encrypt data from django to email
 EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER")
-EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")  # gmail app password. https://stackoverflow.com/a/76439245
+EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")  # enable gmail 2-factor auth then https://myaccount.google.com/apppasswords
