@@ -26,17 +26,20 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
-
-# Detect if running on PythonAnywhere
 if "PYTHONANYWHERE_DOMAIN" in os.environ:
     print("PYTHONANYWHERE environment is detected")
+    remote_hosted = True
+else:
+    remote_hosted = False
+
+# Detect if running on PythonAnywhere
+if remote_hosted:
     ALLOWED_HOSTS = [
         "webdevpony.pythonanywhere.com",
         # "www.yourcustomdomain.com"
     ]
     # SECURITY WARNING: don't run with debug turned on in production!
     DEBUG = False
-
 else:
     print("PYTHONANYWHERE environment is not detected")
     ALLOWED_HOSTS = ["*"]
@@ -214,27 +217,26 @@ SECURE_BROWSER_XSS_FILTER = True
 # If someone tricks the server into serving a malicious script as something harmless like an image, a browser that tries to guess the MIME types might execute the script
 SECURE_CONTENT_TYPE_NOSNIFF = True
 
-# Redirect all HTTP requests to HTTPS (ensure Django is behind a proxy that sets the 'X-Forwarded-Proto' header on PythonAnywhere).
-SECURE_SSL_REDIRECT = True  # Ensures that all traffic is sent over HTTPS. Without this, attackers could intercept data sent over HTTP.
+if remote_hosted:
+    # Redirect all HTTP requests to HTTPS (ensure Django is behind a proxy that sets the 'X-Forwarded-Proto' header on PythonAnywhere).
+    SECURE_SSL_REDIRECT = True  # Ensures that all traffic is sent over HTTPS. Without this, attackers could intercept data sent over HTTP.
 
-# HTTP Strict Transport Security (HSTS) is a security policy mechanism that helps protect websites from man-in-the-middle attacks like protocol downgrade attacks and cookie hijacking. 
-# By setting `SECURE_HSTS_SECONDS` to 31,536,000, you instruct browsers to enforce HTTPS connections to your site for one year. 
-# This prevents accidental HTTP access and increasing security, especially on insecure networks. 
-# This setting helps shield users from SSL stripping attacks, where attackers downgrade HTTPS to HTTP, by ensuring that the browser continuously uses HTTPS. 
-# A longer duration for HSTS is recommended to maintain this protective measure without frequent renewals.
-SECURE_HSTS_SECONDS = 31536000  
+    # HTTP Strict Transport Security (HSTS) is a security policy mechanism that helps protect websites from man-in-the-middle attacks like protocol downgrade attacks and cookie hijacking. 
+    # By setting `SECURE_HSTS_SECONDS` to 31,536,000, you instruct browsers to enforce HTTPS connections to your site for one year. 
+    # This prevents accidental HTTP access and increasing security, especially on insecure networks. 
+    # This setting helps shield users from SSL stripping attacks, where attackers downgrade HTTPS to HTTP, by ensuring that the browser continuously uses HTTPS. 
+    # A longer duration for HSTS is recommended to maintain this protective measure without frequent renewals.
+    SECURE_HSTS_SECONDS = 31536000  
 
-# This setting extends the HSTS policy to all subdomains of the main site. 
-# It's essential to secure not just the main domain but all associated subdomains because attackers might target less secure subdomains to exploit security weaknesses.
-# A subdomain? It's a prefix added to the domain name that helps organize different parts of a website or indicates a separate site under the same brand. 
-# `google.com` has `mail.google.com`, `docs.google.com`. 
-# Subdomains allow companies to separate distinct functionalities and manage them under the same larger domain umbrella.
-SECURE_HSTS_INCLUDE_SUBDOMAINS = True  
+    # This setting extends the HSTS policy to all subdomains of the main site. 
+    # It's essential to secure not just the main domain but all associated subdomains because attackers might target less secure subdomains to exploit security weaknesses.
+    # A subdomain? It's a prefix added to the domain name that helps organize different parts of a website or indicates a separate site under the same brand. 
+    # `google.com` has `mail.google.com`, `docs.google.com`. 
+    # Subdomains allow companies to separate distinct functionalities and manage them under the same larger domain umbrella.
+    SECURE_HSTS_INCLUDE_SUBDOMAINS = True  
 
-# This tells the browser to include your site in its preload list of sites that are only accessible over HTTPS. 
-# Preloading is a measure that can prevent initial HTTP access before the HSTS header is ever received. 
-# Websites can be submitted to a preload list that browsers use to enforce HTTPS connections before any contact has been made with the servers. 
-# this effectively prevents the first connection from being over HTTP.
-SECURE_HSTS_PRELOAD = True  
-
-
+    # This tells the browser to include your site in its preload list of sites that are only accessible over HTTPS. 
+    # Preloading is a measure that can prevent initial HTTP access before the HSTS header is ever received. 
+    # Websites can be submitted to a preload list that browsers use to enforce HTTPS connections before any contact has been made with the servers. 
+    # this effectively prevents the first connection from being over HTTP.
+    SECURE_HSTS_PRELOAD = True  
