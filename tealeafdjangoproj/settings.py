@@ -64,7 +64,6 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     # enforces Content Security Policy to prevent XSS attacks by specifying trusted content sources. more settings below
     "csp.middleware.CSPMiddleware",
-    ...
     ]
 
 
