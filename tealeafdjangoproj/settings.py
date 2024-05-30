@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     "firstapp",
 ]
 
+
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
@@ -61,7 +62,11 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-]
+    # enforces Content Security Policy to prevent XSS attacks by specifying trusted content sources. more settings below
+    "csp.middleware.CSPMiddleware",
+    ...
+    ]
+
 
 ROOT_URLCONF = "tealeafdjangoproj.urls"
 
@@ -118,13 +123,9 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
-
 LANGUAGE_CODE = "en-us"
-
 TIME_ZONE = "UTC"
-
 USE_I18N = True
-
 USE_TZ = True
 
 
@@ -142,6 +143,19 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
+################### EMAIL SETTINGS ###################
+# email settings for contact.html form
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = os.getenv("EMAIL_HOST")
+EMAIL_PORT = os.getenv("EMAIL_PORT")
+EMAIL_USE_TLS = True  # security: encrypt data from django to email
+EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER")
+EMAIL_HOST_PASSWORD = os.getenv(
+    "EMAIL_HOST_PASSWORD"
+)  # enable gmail 2-factor auth then https://myaccount.google.com/apppasswords
+
+
+################### SECURITY SETTINGS ###################
 
 # https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/#https
 # Configure Django Settings for Secure Cookies
@@ -155,12 +169,20 @@ SESSION_COOKIE_SECURE = True
 # visit http://webdevpony.pythonanywhere.com/ and see if it redirects to https://webdevpony.pythonanywhere.com/
 
 
-# email settings
-EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-EMAIL_HOST = os.getenv("EMAIL_HOST")
-EMAIL_PORT = os.getenv("EMAIL_PORT")
-EMAIL_USE_TLS = True  # security: encrypt data from django to email
-EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER")
-EMAIL_HOST_PASSWORD = os.getenv(
-    "EMAIL_HOST_PASSWORD"
-)  # enable gmail 2-factor auth then https://myaccount.google.com/apppasswords
+
+# Content Security Policy settings to prevent XSS.
+CSP_DEFAULT_SRC = ("'self'",)  # Restricts all content sources to the same origin, preventing the inclusion of malicious content.
+CSP_STYLE_SRC = (
+    "'self'", 
+    "https://cdnjs.cloudflare.com",  # Allows stylesheets from cdnjs
+    "https://cdn.jsdelivr.net",  # Allows stylesheets from jsdelivr
+    "https://fonts.googleapis.com"  # Allows stylesheets from Google Fonts
+)  # Specifies trusted sources for styles, preventing the inclusion of untrusted stylesheets.
+CSP_SCRIPT_SRC = (
+    "'self'", 
+    "https://cdn.jsdelivr.net"  # Allows scripts from jsdelivr
+)  # Specifies trusted sources for scripts, preventing the inclusion of untrusted scripts.
+CSP_FONT_SRC = ("'self'", "https://fonts.googleapis.com", "https://fonts.gstatic.com")  # Specifies trusted sources for fonts, ensuring only fonts from trusted sources are loaded.
+CSP_IMG_SRC = ("'self'", "data:")  # Allows images from the same origin and inline images (data URIs).
+CSP_CONNECT_SRC = ("'self'",)  # Restricts connections to the same origin, preventing unauthorized data exfiltration.
+CSP_FRAME_SRC = ("'none'",)  # Prevents the site from being embedded in a frame, further protecting against clickjacking.
