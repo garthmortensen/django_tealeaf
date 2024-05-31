@@ -5,12 +5,12 @@ from django.core.exceptions import ValidationError
 
 class CategoryModelTest(TestCase):
     def test_category_str_representation(self):
-        category = Category(name='Landscape')
-        self.assertEqual(str(category), 'Landscape')
+        category = Category(name='testing_mock_category')
+        self.assertEqual(str(category), 'testing_mock_category')
 
 class PaintingModelTest(TestCase):
     def setUp(self):
-        self.category = Category.objects.create(name='Landscape')
+        self.category = Category.objects.create(name='testing_mock_category')
         self.image = SimpleUploadedFile("image.jpg", b"file_content", content_type="image/jpeg")
         self.painting = Painting.objects.create(
             category=self.category,
