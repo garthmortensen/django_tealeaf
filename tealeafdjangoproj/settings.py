@@ -58,9 +58,16 @@ INSTALLED_APPS = [
 ]
 
 
+# Middleware in Django allows you to process requests and responses globally across your application. 
+# It sits between the web server and the view, intercepting requests and responses to perform various tasks.
+# middleware classes apply to each incoming request and outgoing response.
+# Each middleware class performs a specific function or task.
 MIDDLEWARE = [
+    # adds several security-related HTTP headers to the response, such as enforcing HTTPS and setting the X-Content-Type-Options header
     "django.middleware.security.SecurityMiddleware",
+    # enables session support, allowing you to store and retrieve data associated with a specific user's session
     "django.contrib.sessions.middleware.SessionMiddleware",
+    # provides common operations, eg adding the X-Frame-Options header to prevent clickjacking attacks and appending a slash to URLs that lack one
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",

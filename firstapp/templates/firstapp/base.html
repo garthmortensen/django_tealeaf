@@ -27,9 +27,7 @@
 </head>
 
 <body>
-    <!-- <header> to contain the header content -->
     <header>
-        <!-- <nav> to contain navigation links -->
         <nav id="nav-links" aria-label="Main Navigation">
             <a href="{% url 'home' %}" class="nav-link">Home</a>
             <!-- Portfolio dropdown adjusted -->
@@ -51,25 +49,21 @@
         <div id="business-name" aria-label="Business Name">Tea Leaf Gallery</div>
     </header>
     
-
-    <!-- <main> to indicate the main content of the page -->
     <main aria-label="Main Content">
         {% block content %}
         {% endblock %}
     </main>
 
-    <!-- teapot appears immediately before footer -->
     <div class="teapot-container" aria-hidden="true">
         <img class="teapot" src="{% static 'firstapp/teapot.png' %}" alt="teapot">
     </div>
 
-    <!-- <footer> to contain the footer content -->
     <footer aria-label="Footer">
         <p id="reality">Reality Requires Art</p>
         <p>Copyright © 2024 Kelli Fifield. All rights reserved.</p>
-        <p>Unearthly development by <b class="planetx">Websites from Planet X.</b></p>
+        <p>brought to you by <b class="planetx">Websites from Dimension X!</b></p>
         <!-- Hidden message for screen readers -->
-        <p class="sr-only" aria-hidden="false">Dear screen reader user, We're here to make things inclusive. Have PROTIPS on how we can do better? We're all ears. Love from Planet X.</p>
+        <p class="sr-only" aria-hidden="false">Dear screen reader user, We're here to make things inclusive. Have ideas on how we can better serve you? Please let us know!</p>
     </footer>
     
     <!-- jQuery, Popper.js, and Bootstrap JS (all included in the bundle) -->
