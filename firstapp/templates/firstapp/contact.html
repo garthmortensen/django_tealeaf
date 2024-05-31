@@ -17,7 +17,21 @@
 
             <form class="contact-form" method="post" novalidate>
                 {% csrf_token %}
-                {{ form.as_p }} <!-- Render form fields here -->
+                <div>
+                    {{ form.name.label_tag }}{{ form.name }}
+                </div>
+                <div>
+                    {{ form.email.label_tag }}{{ form.email }}
+                </div>
+                <div>
+                    {{ form.subject.label_tag }}{{ form.subject }}
+                </div>
+                <div>
+                    {{ form.message.label_tag }}{{ form.message }}
+                </div>
+                <div>
+                    {{ form.captcha.label_tag }}{{ form.captcha }}
+                </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
 
