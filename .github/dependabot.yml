@@ -1,0 +1,12 @@
+version: 2
+updates:
+  - package-ecosystem: "pip"
+    directory: "/"  # repo root dir
+    schedule:
+      interval: "weekly"  # frequency of update checks
+    open-pull-requests-limit: 5  # max open pull requests Dependabot should have at any time
+    allow:
+      - dependency-type: "all"  # Allows updates for direct and indirect dependencies
+    ignore:
+      - dependency-name: "django"  # Ignore this library to manually manage its version
+        # versions: ["3.2.*"]  # versions to ignore
