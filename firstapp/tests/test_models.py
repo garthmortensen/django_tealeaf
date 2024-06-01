@@ -3,6 +3,10 @@ from django.core.files.uploadedfile import SimpleUploadedFile
 from firstapp.models import Category, Painting
 from django.core.exceptions import ValidationError
 
+# this code creates mock data for testing
+# i dont delete the files after the test, because that creates for a confusing, untraceable environment
+# TODO: remember to delete the files after so many tests...but they're only 12 bytes each, so biggie
+# /django_tealeaf/media/testing_mock_category/*.jpg
 class CategoryModelTest(TestCase):
     def test_category_str_representation(self):
         category = Category(name='testing_mock_category')

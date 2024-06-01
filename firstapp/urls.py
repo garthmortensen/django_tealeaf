@@ -21,13 +21,15 @@ urlpatterns = [
     path(route="contact/", view=contact, name="contact"),
     # http://127.0.0.1:8000/thank_you
     path(route="thank-you/", view=thank_you, name="thank_you"),
-    # http://127.0.0.1:8000/
-    path(route="", view=CategoryListView.as_view(), name="category-list"),
+    # http://127.0.0.1:8000/categories/
+    path(route="categories/", view=CategoryListView.as_view(), name="category-list"),
     # http://127.0.0.1:8000/category/Landscapes/
     path(
         route="category/<str:category_name>/",
         view=PaintingListView.as_view(),
         name="painting-list",
     ),
-    # tells Django to serve media files at MEDIA_URL from MEDIA_ROOT when DEBUG is True.
+    path('paintings/<str:category_name>/', PaintingListView.as_view(), name='painting_list'),
+
+    # tell Django to serve media files at MEDIA_URL from MEDIA_ROOT when DEBUG is True.
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
