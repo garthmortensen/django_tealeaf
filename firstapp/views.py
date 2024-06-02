@@ -53,6 +53,7 @@ def contact(request):
 
 
 def thank_you(request):
+    logger.info("Statement page accessed")
     return render(request, "firstapp/thank_you.html")
 
 
