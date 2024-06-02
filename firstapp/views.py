@@ -11,8 +11,12 @@ from .forms import ContactForm
 from django.conf import settings
 from django.core.mail import send_mail
 
+import logging
+logger = logging.getLogger(__name__)
+
 
 def home(request):
+    logger.info("Home page accessed")
     context = {
         "page_name": "home",
     }
@@ -44,6 +48,7 @@ def thank_you(request):
 
 
 def statement(request):
+    logger.info("Statement page accessed")
     context = {
         "page_name": "statement",
     }
