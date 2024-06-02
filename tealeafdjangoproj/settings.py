@@ -204,11 +204,16 @@ CSP_STYLE_SRC = (
 # Specifies trusted sources for scripts, preventing the inclusion of untrusted scripts.
 CSP_SCRIPT_SRC = (
     "'self'", 
-    "https://cdn.jsdelivr.net"  # Allows scripts from jsdelivr
+    "https://cdn.jsdelivr.net",  # Allows scripts from jsdelivr
+    "https://www.googletagmanager.com/gtag/",
+)
+# Restricts connections to the same origin, preventing unauthorized data exfiltration.
+CSP_CONNECT_SRC = (
+    "'self'", 
+    "https://www.google-analytics.com",  # Allows connections to Google Analytics
 )
 CSP_FONT_SRC = ("'self'", "https://fonts.googleapis.com", "https://fonts.gstatic.com")  # Specifies trusted sources for fonts, ensuring only fonts from trusted sources are loaded.
 CSP_IMG_SRC = ("'self'", "data:")  # Allows images from the same origin and inline images (data URIs).
-CSP_CONNECT_SRC = ("'self'",)  # Restricts connections to the same origin, preventing unauthorized data exfiltration.
 CSP_FRAME_SRC = ("'none'",)  # Prevents the site from being embedded in a frame, further protecting against clickjacking.
 
 
