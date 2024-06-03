@@ -6,36 +6,30 @@ from firstapp.views import PaintingListView
 class HomeViewTest(TestCase):
     def test_template_used(self):
         url = reverse('home')
-        response = self.client.get(url)
+        response = self.client.get(url, follow=True)
         self.assertTemplateUsed(response, 'firstapp/home.html')
 
 class StatementViewTest(TestCase):
     def test_template_used(self):
         url = reverse('statement')
-        response = self.client.get(url)
+        response = self.client.get(url, follow=True)
         self.assertTemplateUsed(response, 'firstapp/statement.html')
 
 class ContactViewTest(TestCase):
     def test_template_used(self):
         url = reverse('contact')
-        response = self.client.get(url)
+        response = self.client.get(url, follow=True)
         self.assertTemplateUsed(response, 'firstapp/contact.html')
 
 class ThankYouViewTest(TestCase):
     def test_template_used(self):
         url = reverse('thank_you')
-        response = self.client.get(url)
-        print(f"response.url: {response.url}")  # This will show the URL to which it is redirecting
-        print(f"response.content: {response.content}")
-        print(f"response.status_code: {response.status_code}")  # Should be 200 for successful template rendering
-        # print(response.redirect_chain)  # Shows if and where the response was redirected
-
         response = self.client.get(url, follow=True)
-        print(f"response.redirect_chain: {response.redirect_chain}")  # Shows if and where the response was redirected
-        
+        # print(f"response.url: {response.url}")  # This will show the URL to which it is redirecting
+        # print(f"response.content: {response.content}")
+        # print(f"response.status_code: {response.status_code}")  # Should be 200 for successful template rendering
+        # print(response.redirect_chain)  # Shows if and where the response was redirected        
         self.assertTemplateUsed(response, 'firstapp/thank_you.html')
-
-        
 
 # class CategoryListViewTest(TestCase):
 #     def test_template_used(self):
