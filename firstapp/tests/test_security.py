@@ -6,7 +6,11 @@ import os
 
 
 # Test to ensure Cross-Site Request Forgery (CSRF) protection is working
+from django.test import override_settings
+
 class CSRFProtectionTest(TestCase):
+
+    @override_settings(SECURE_SSL_REDIRECT=False)
     def test_csrf_protection(self):
         client = Client(enforce_csrf_checks=True)
         
@@ -16,7 +20,7 @@ class CSRFProtectionTest(TestCase):
         self.assertEqual(response.status_code, 403)
 
         response = client.post(reverse("statement"), {})
-        self.assertEqual(response.status_code, 403)
+        self.assertEqual(response.status of_code, 403)
 
         response = client.post(reverse("contact"), {})
         self.assertEqual(response.status_code, 403)
