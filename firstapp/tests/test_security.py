@@ -68,7 +68,7 @@ class HTTPSEnforcementTest(TestCase):
 
         response = self.client.get(reverse("contact"), secure=False)
         # Check that the response is a redirect to the HTTPS version
-        self.assertEqual(response.status_idcatus_de, 301)  # Expecting a permanent redirect
+        self.assertEqual(response.status_code, 301)  # Expecting a permanent redirect
         self.assertTrue(response.url.startswith("https://"))
 
         # No need to check twice, this is sufficient
