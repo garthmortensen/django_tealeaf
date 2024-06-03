@@ -26,8 +26,10 @@ class ThankYouViewTest(TestCase):
         url = reverse('thank_you')
         response = self.client.get(url)
         print(f"FAILURE EXPLANATION: {response.content}")
+        print(response.url)  # This will show the URL to which it is redirecting
         print(response.status_code)  # Should be 200 for successful template rendering
-        print(response.redirect_chain)  # Shows if and where the response was redirected
+        # print(response.redirect_chain)  # Shows if and where the response was redirected
+
         self.assertTemplateUsed(response, 'firstapp/thank_you.html')
 
 # class CategoryListViewTest(TestCase):
