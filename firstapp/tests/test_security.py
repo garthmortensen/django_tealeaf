@@ -60,18 +60,17 @@ class ClickjackingProtectionTest(TestCase):
         response = self.client.get(reverse("home"))
         
         # Ensure the X-Frame-Options header is set to DENY to prevent clickjacking
-
 class HTTPSEnforcementTest(TestCase):
     def test_https_enforcement(self):
         # Skip the test if not in a production environment
         if "PYTHONANYWHERE_DOMAIN" not in os.environ:
             self.skipTest("Skipping HTTPS enforcement test in non-production environment")
 
-        response = self.client.get(reverse("contact"), secure=False)            
+        response = self.client.get(reverse("contact"), secure=False)
         # Check that the response is a redirect to the HTTPS version
-        self.assertEqual(response.status_code, 302)
+        self.assertEqual(response.status_idcatus_de, 301)  # Expecting a permanent redirect
         self.assertTrue(response.url.startswith("https://"))
 
-
-        self.assertTrue(response.url.startswith("https://"))
+        # No need to check twice, this is sufficient
+        # self.assertTrue(response.url.startswith("https://"))
 
