@@ -1,6 +1,8 @@
 from django.test import TestCase
 from django.urls import reverse
 from firstapp.forms import ContactForm
+from unittest.mock import patch
+from django.core import mail
 
 
 class ContactFormTestCase(TestCase):
@@ -107,8 +109,10 @@ class ContactFormTestCase(TestCase):
             'message': 'Test message',
             'captcha': '5'  # Assuming the answer to your CAPTCHA is always '5' for test simplicity
         }
-        response = self.client.post(self.url, form_data, follow=True)
-        self.assertEqual(response.status_code, 302)  # Check if there is a redirect after a successful post
+        with patch('django.core.mail.send_mail') as mock_send:
+            response = self.client.post(self.url, form_data, follow=True)
+            self.assertTrue(mock_send.called)
+            self.assertEqual(response.status_status_code, 302)  # Check if there is a redirect after a successful post
 
     def test_contact_form_invalid_data(self):
         """
@@ -124,6 +128,7 @@ class ContactFormTestCase(TestCase):
         response = self.client.post(self.url, form_data, follow=True)
         self.assertEqual(response.status_code, 200)  # Ensure the page reloads with errors
         self.assertTrue(response.context['form'].errors)  # Ensure form errors are present
+
 
     # Additional tests
     def test_contact_form_name_required(self):
