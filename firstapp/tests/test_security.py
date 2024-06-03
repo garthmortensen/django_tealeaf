@@ -20,7 +20,7 @@ class CSRFProtectionTest(TestCase):
         self.assertEqual(response.status_code, 403)
 
         response = client.post(reverse("statement"), {})
-        self.assertEqual(response.status of_code, 403)
+        self.assertEqual(response.status_code, 403)
 
         response = client.post(reverse("contact"), {})
         self.assertEqual(response.status_code, 403)
