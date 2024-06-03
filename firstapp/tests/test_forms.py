@@ -10,7 +10,7 @@ class ContactFormTestCase(TestCase):
 
     def setUp(self):
         self.url = reverse('contact')
-        self.response = self.client.get(self.url)
+        self.response = self.client.get(self.url, follow=True)  # Follow any initial redirects
 
     def test_contact_form_status_code(self):
         """
