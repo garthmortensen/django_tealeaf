@@ -107,7 +107,7 @@ class ContactFormTestCase(TestCase):
             'message': 'Test message',
             'captcha': '5'  # Assuming the answer to your CAPTCHA is always '5' for test simplicity
         }
-        response = self.client.post(self.url, form_data)
+        response = self.client.post(self.url, form_data, follow=True)
         self.assertEqual(response.status_code, 302)  # Assuming you redirect after a successful post
 
     def test_contact_form_invalid_data(self):
@@ -121,7 +121,7 @@ class ContactFormTestCase(TestCase):
             'message': 'Test',  # This might be valid depending on min_length settings
             'captcha': 'wrong'  # Incorrect CAPTCHA
         }
-        response = self.client.post(self.url, form_data)
+        response = self.client.post(self.url, form_data, follow=True)
         self.assertEqual(response.status_code, 200)  # Assuming the page reloads with errors, not redirects
         self.assertTrue(response.context['form'].errors)  # Check if form errors are present
     # Additional tests
