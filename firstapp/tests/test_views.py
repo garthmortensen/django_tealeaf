@@ -25,6 +25,7 @@ class ThankYouViewTest(TestCase):
     def test_template_used(self):
         url = reverse('thank_you')
         response = self.client.get(url)
+        print(response.content)
         self.assertTemplateUsed(response, 'firstapp/thank_you.html')
 
 # class CategoryListViewTest(TestCase):
