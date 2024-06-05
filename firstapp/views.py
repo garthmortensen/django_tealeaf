@@ -49,7 +49,7 @@ def contact(request):
             logger.warning("Invalid form submission attempted")
     else:
         form = ContactForm()
-    return render(request, "firstapp/contact.html", {"form": form})
+    return render(request, "firstapp/contact.html", {"form": form}) 
 
 
 def thank_you(request):
