@@ -207,3 +207,95 @@
 2024-06-02 01:59:22,740 INFO autoreload /home/garth/develop/django_tealeaf/firstapp/views.py changed, reloading.
 2024-06-02 01:59:22,929 INFO autoreload Watching for file changes with StatReloader
 2024-06-02 01:59:22,929 INFO autoreload Watching for file changes with StatReloader
+2024-06-02 11:17:27,667 INFO views Contact page accessed
+2024-06-02 11:17:27,725 INFO views Contact page accessed
+2024-06-02 11:17:27,740 INFO views Contact page accessed
+2024-06-02 11:17:27,755 INFO views Contact page accessed
+2024-06-02 11:17:27,770 INFO views Contact page accessed
+2024-06-02 11:17:27,787 INFO views Contact page accessed
+2024-06-02 11:17:27,801 INFO views Contact page accessed
+2024-06-02 11:17:27,815 INFO views Contact page accessed
+2024-06-02 11:17:27,825 WARNING views Invalid form submission attempted
+2024-06-02 11:17:27,838 INFO views Contact page accessed
+2024-06-02 11:17:27,851 INFO views Contact page accessed
+2024-06-02 11:17:27,865 INFO views Contact page accessed
+2024-06-02 11:17:27,876 INFO views Contact page accessed
+2024-06-02 11:17:27,890 INFO views Contact page accessed
+2024-06-02 11:17:27,903 INFO views Contact page accessed
+2024-06-02 11:17:27,915 INFO views Contact page accessed
+2024-06-02 11:17:27,917 INFO views Sending email from John Doe
+2024-06-02 11:17:27,921 INFO views Email sent successfully
+2024-06-02 11:17:27,924 INFO views Contact page accessed
+2024-06-02 11:17:27,936 INFO views Contact page accessed
+2024-06-02 11:17:27,961 WARNING log Forbidden (CSRF cookie not set.): /
+2024-06-02 11:17:27,961 WARNING log Forbidden (CSRF cookie not set.): /
+2024-06-02 11:17:27,967 WARNING log Forbidden (CSRF cookie not set.): /statement/
+2024-06-02 11:17:27,967 WARNING log Forbidden (CSRF cookie not set.): /statement/
+2024-06-02 11:17:27,970 WARNING log Forbidden (CSRF cookie not set.): /contact/
+2024-06-02 11:17:27,970 WARNING log Forbidden (CSRF cookie not set.): /contact/
+2024-06-02 11:17:27,976 INFO views Home page accessed
+2024-06-02 11:17:27,993 INFO views Contact page accessed
+2024-06-02 11:17:28,006 INFO views Home page accessed
+2024-06-02 11:17:28,013 INFO views Fetching paintings for category: testing_mock_category
+2024-06-02 11:17:28,017 INFO views Fetching paintings for category: testing_mock_category
+2024-06-02 11:17:28,045 INFO views Statement page accessed
+2024-06-02 11:17:28,052 INFO views Statement page accessed
+2024-06-03 02:36:38,556 INFO views Contact page accessed
+2024-06-03 02:36:38,569 INFO views Contact page accessed
+2024-06-03 02:36:38,572 INFO views Contact page accessed
+2024-06-03 02:36:38,575 INFO views Contact page accessed
+2024-06-03 02:36:38,578 INFO views Contact page accessed
+2024-06-03 02:36:38,583 INFO views Contact page accessed
+2024-06-03 02:36:38,587 INFO views Contact page accessed
+2024-06-03 02:36:38,590 INFO views Contact page accessed
+2024-06-03 02:36:38,592 WARNING views Invalid form submission attempted
+2024-06-03 02:36:38,595 INFO views Contact page accessed
+2024-06-03 02:36:38,598 INFO views Contact page accessed
+2024-06-03 02:36:38,602 INFO views Contact page accessed
+2024-06-03 02:36:38,605 INFO views Contact page accessed
+2024-06-03 02:36:38,607 INFO views Contact page accessed
+2024-06-03 02:36:38,612 INFO views Contact page accessed
+2024-06-03 02:36:38,616 INFO views Contact page accessed
+2024-06-03 02:36:38,617 INFO views Sending email from John Doe
+2024-06-03 02:36:38,630 INFO views Email sent successfully
+2024-06-03 02:36:38,631 INFO views Contact page accessed
+2024-06-03 02:36:38,633 INFO views Contact page accessed
+2024-06-03 02:36:38,640 WARNING log Forbidden (CSRF cookie not set.): /
+2024-06-03 02:36:38,640 WARNING log Forbidden (CSRF cookie not set.): /
+2024-06-03 02:36:38,642 WARNING log Forbidden (CSRF cookie not set.): /statement/
+2024-06-03 02:36:38,642 WARNING log Forbidden (CSRF cookie not set.): /statement/
+2024-06-03 02:36:38,644 WARNING log Forbidden (CSRF cookie not set.): /contact/
+2024-06-03 02:36:38,644 WARNING log Forbidden (CSRF cookie not set.): /contact/
+2024-06-03 02:36:38,646 INFO views Home page accessed
+2024-06-03 02:36:38,651 INFO views Contact page accessed
+2024-06-03 02:36:38,654 INFO views Home page accessed
+2024-06-03 02:36:38,655 INFO views Fetching paintings for category: testing_mock_category
+2024-06-03 02:36:38,656 INFO views Fetching paintings for category: testing_mock_category
+2024-06-03 02:36:38,665 INFO views Statement page accessed
+2024-06-03 02:36:38,667 INFO views Statement page accessed
+2024-06-03 02:52:45,757 INFO views Contact page accessed
+2024-06-03 02:52:45,772 INFO views Contact page accessed
+2024-06-03 02:52:45,776 INFO views Contact page accessed
+2024-06-03 02:52:45,781 INFO views Contact page accessed
+2024-06-03 02:52:45,786 INFO views Contact page accessed
+2024-06-03 02:52:45,789 INFO views Contact page accessed
+2024-06-03 02:52:45,793 INFO views Contact page accessed
+2024-06-03 02:52:45,798 INFO views Contact page accessed
+2024-06-03 02:52:45,803 INFO views Contact page accessed
+2024-06-03 02:52:45,806 INFO views Contact page accessed
+2024-06-03 02:52:45,809 INFO views Contact page accessed
+2024-06-03 02:52:45,813 INFO views Contact page accessed
+2024-06-03 02:52:45,819 INFO views Contact page accessed
+2024-06-03 02:52:45,827 WARNING log Forbidden (CSRF cookie not set.): /
+2024-06-03 02:52:45,827 WARNING log Forbidden (CSRF cookie not set.): /
+2024-06-03 02:52:45,830 WARNING log Forbidden (CSRF cookie not set.): /statement/
+2024-06-03 02:52:45,830 WARNING log Forbidden (CSRF cookie not set.): /statement/
+2024-06-03 02:52:45,832 WARNING log Forbidden (CSRF cookie not set.): /contact/
+2024-06-03 02:52:45,832 WARNING log Forbidden (CSRF cookie not set.): /contact/
+2024-06-03 02:52:45,834 INFO views Home page accessed
+2024-06-03 02:52:45,839 INFO views Contact page accessed
+2024-06-03 02:52:45,842 INFO views Home page accessed
+2024-06-03 02:52:45,844 INFO views Fetching paintings for category: testing_mock_category
+2024-06-03 02:52:45,846 INFO views Fetching paintings for category: testing_mock_category
+2024-06-03 02:52:45,856 INFO views Statement page accessed
+2024-06-03 02:52:45,858 INFO views Statement page accessed
