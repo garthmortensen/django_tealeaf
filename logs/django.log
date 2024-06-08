@@ -1,0 +1,26 @@
+2024-06-08 00:45:20,797 INFO views Contact page accessed
+2024-06-08 00:45:20,812 INFO views Contact page accessed
+2024-06-08 00:45:20,816 INFO views Contact page accessed
+2024-06-08 00:45:20,821 INFO views Contact page accessed
+2024-06-08 00:45:20,825 INFO views Contact page accessed
+2024-06-08 00:45:20,829 INFO views Contact page accessed
+2024-06-08 00:45:20,832 INFO views Contact page accessed
+2024-06-08 00:45:20,836 INFO views Contact page accessed
+2024-06-08 00:45:20,840 INFO views Contact page accessed
+2024-06-08 00:45:20,843 INFO views Contact page accessed
+2024-06-08 00:45:20,846 INFO views Contact page accessed
+2024-06-08 00:45:20,849 INFO views Contact page accessed
+2024-06-08 00:45:20,856 INFO views Contact page accessed
+2024-06-08 00:45:20,866 WARNING log Forbidden (CSRF cookie not set.): /
+2024-06-08 00:45:20,866 WARNING log Forbidden (CSRF cookie not set.): /
+2024-06-08 00:45:20,867 WARNING log Forbidden (CSRF cookie not set.): /statement/
+2024-06-08 00:45:20,867 WARNING log Forbidden (CSRF cookie not set.): /statement/
+2024-06-08 00:45:20,868 WARNING log Forbidden (CSRF cookie not set.): /contact/
+2024-06-08 00:45:20,868 WARNING log Forbidden (CSRF cookie not set.): /contact/
+2024-06-08 00:45:20,870 INFO views Home page accessed
+2024-06-08 00:45:20,874 INFO views Contact page accessed
+2024-06-08 00:45:20,878 INFO views Home page accessed
+2024-06-08 00:45:20,880 INFO views Fetching paintings for category: testing_mock_category
+2024-06-08 00:45:20,881 INFO views Fetching paintings for category: testing_mock_category
+2024-06-08 00:45:20,893 INFO views Statement page accessed
+2024-06-08 00:45:20,895 INFO views Statement page accessed
