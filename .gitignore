@@ -3,3 +3,10 @@ venv/
 *__pycache__*
 # db.sqlite3  # add db to repo so cloning keeps the data
 testing_mock_category/
+
+# ignore all files within logs/ 
+# Since Git doesn't track empty folders, you can add an empty .gitkeep file inside the logs/ folder to keep the folder in your repository without tracking any other files in it.
+# !.gitkeep tells Git to not ignore a .gitkeep file. 
+logs/*
+!.gitkeep
+
