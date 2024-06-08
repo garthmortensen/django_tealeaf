@@ -10,3 +10,6 @@ updates:
     ignore:
       - dependency-name: "django"  # Ignore this library to manually manage its version
         # versions: ["3.2.*"]  # versions to ignore
+    commit-message:  # customize how Dependabot commits are labeled, making it easier to identify Dependabot PRs
+      prefix: "chore"
+      include: "scope"  # include the type of dependency in the commit message
