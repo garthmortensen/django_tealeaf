@@ -1,5 +1,7 @@
 # tealeafdjangoproj
 
+[![Django CI](https://github.com/garthmortensen/django_tealeaf/actions/workflows/django-tests.yml/badge.svg)](https://github.com/garthmortensen/django_tealeaf/actions/workflows/django-tests.yml)
+
 This is a rebuild of tealeaf using django as backend, in order to reduce future maintenance cost.
 
 Check history.log for details, but it uses `venv`, `docker` (podman), `django`.
